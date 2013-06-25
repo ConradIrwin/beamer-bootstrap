@@ -1,0 +1,46 @@
+% This is an example beamer presentation with background images and code.
+\documentclass[14pt]{beamer}
+
+% All the meta-fluff is in the include directory.
+\input{include/pygments-defines}
+\input{include/spaced-items}
+\input{include/no-navigation}
+
+\begin{document}
+
+% This sets up the title page
+\title{Beamer Bootstrap}
+\author{@ConradIrwin}
+\date{\today}
+\frame{\titlepage}
+
+% This is a normal beamer slide
+\frame
+{
+  \frametitle{Beamer Bootstrap}
+
+  \begin{itemize}
+  \item Beamer is awesome for presentations.
+  \item But setting it up with pygments is fiddly.
+  \item This makes pandas sad.
+  \end{itemize}
+}
+
+% This is a frame with a custom image from the img directory.
+{
+\usebackgroundtemplate{\includegraphics[height=\paperheight]{img/sad-panda.jpg}}
+\frame{
+
+}
+}
+
+% This is code on a slide.
+% NOTE:
+%  1. the [fragile] makes it actually render correctly
+%  2. \input{build/code/...}
+\begin{frame}[fragile]
+  \frametitle{K\&R Hello World}
+  \input{build/code/hello_world.c}
+\end{frame}
+
+\end{document}
