@@ -21,7 +21,7 @@ all: $(PDFS)
 # To make foo.pdf from foo.tex, whenever any file changes use lualatex in the
 # build directory and copy the finally copy the resulting pdf to the top level.
 %.pdf: %.tex $(CODES) $(IMAGES) $(INCLUDES)
-	mkdir -p build
+	mkdir -p build/build/code
 	lualatex -output-directory build $<
 	cp build/$@ .
 
